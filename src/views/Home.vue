@@ -8,9 +8,13 @@
       <div class='topBar'>
       <img class='homepage-logo' src="../assets/homepage/new-site-logo.png" width="315" height="135" />
       <div class='btnCont'>
-      <button class='clearBtn'>Home</button>
-      <button class='clearBtn'>Diagnostic Tool</button>
-      
+            <router-link to="/">      
+            <button class='clearBtn'>Home</button>
+            </router-link> | 
+            <router-link to="/problem-selector">
+            <button class='clearBtn'>Diagnostic Tool</button>
+            </router-link>
+
       </div>
       </div>
 
@@ -921,12 +925,16 @@ data(){
   border-radius: 7px;
   width: 277px;
   height: 54px;
-  background: #FFFFFF;
+  background-color: rgba(255, 255, 255, 0.59);
+  box-shadow: inset 0x 5px 7px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: inset 0x 5px 7px rgba(0, 0, 0, 0.75);
   border: 2px solid #D0D0E3;
   box-sizing: border-box;
   border-radius: 15px;
 }
-
+.footerInp:focus{
+  background-color: rgba(255, 255, 255, 0.7);
+}
 .inpDiv{
   position: relative;
 

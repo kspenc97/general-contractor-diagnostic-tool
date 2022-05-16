@@ -448,7 +448,8 @@ beforeMount(){
 }
 
 .gate2{
-  
+  width: 40vw;
+  height: 70vh;
   filter: contrast(1.15);
   position: relative;
   background: rgba(219, 219, 219, 0.8);
@@ -458,6 +459,17 @@ beforeMount(){
   -webkit-box-shadow: 4px 0px 51px 72px rgba(217,217,217,0.71) inset;
   -moz-box-shadow: 4px 0px 51px 72px rgba(217,217,217,0.71) inset;
 
+}
+.gate-outer-gate-2{
+  box-sizing: border-box;
+  border-top-width: 10px;
+  border-left-width: 4.9px;
+  border-bottom-width: 5px;
+  border-right-width: 10px;
+  border-style: solid;
+  border-color: rgba(204, 199, 187, 0.8);
+  filter: invert(1);
+  
 }
 .gate-outer-gate-3{
   /* ADDED */
@@ -636,27 +648,14 @@ import arrow from './assets/homepage/arrow.svg';
           filter: opacity(100%) blur(0px);
         }
       }
-  .gate2{
-  width: 40vw;
-  height: 70vh;
-  }
+ 
   .gate3{
       width: 80vw;
 
   }
 
 
-  .gate-outer-gate-2{
-  box-sizing: border-box;
-  border-top-width: 10px;
-  border-left-width: 5px;
-  border-bottom-width: 5px;
-  border-right-width: 10px;
-  border-style: solid;
-  border-color: rgba(204, 199, 187, 0.8);
-  filter: invert(1);
-  
-}
+
 
 }
 /* TABLETS */
