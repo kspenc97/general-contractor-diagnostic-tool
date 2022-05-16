@@ -431,7 +431,6 @@ beforeMount(){
   border-style: solid;
   border-color: rgba(204, 199, 187, 0.8);
   filter: invert(1);
-  
 }
 .gate1{
   width: 40vw;

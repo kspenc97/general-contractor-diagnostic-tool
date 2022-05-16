@@ -24,7 +24,7 @@
 #nav {
   border:#42b983;
   border-color: #42b983;
-  width: 100%;
+  width: 100vw;
   height: 10%;
   position: fixed;
 }

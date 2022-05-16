@@ -8,15 +8,14 @@
         <div  v-for="outerObj in this.importedData" :key="outerObj.name">
         <p class="gate-3-section-title" >{{outerObj.name}}</p>
           <div class="glass-pane-gate-3">
-          <div v-for="packedItem in outerObj.packedItems" :key="packedItem.user_input_id">
-           <div class="glass-pane-gate-3-row">
+          <div class="glass-pane-gate-3-row" v-for="packedItem in outerObj.packedItems" :key="packedItem.user_input_id">
           <div class="glass-pane-gate-3-cell">
           <p class="gate-3-subtitle">{{packedItem.question}}</p>
           <!--  -->
           <div v-if="packedItem.answersArr[0] !== 'INPUT'">
           <div class='select-and-button-gate-3'>
           <select 
-              class='select-main-class-gate-3' 
+              class='select-gate-3' 
               name="narrower" 
               id="narrower" 
               :value="packedItem.question" 
@@ -46,7 +45,7 @@
           </div>
           <!--  -->
           <!-- optional input start -->
-          <div v-if="inputTray.includes(packedItem.question) || packedItem.answersArr[0] === 'INPUT'">
+          <div class="optional-input-gate-3-block"  v-if="inputTray.includes(packedItem.question) || packedItem.answersArr[0] === 'INPUT'">
             <input 
                 class="optional-input-gate-3" 
                 type="text" 
@@ -57,7 +56,6 @@
           </div>
           <!-- optional input end -->
           </div>
-        </div>
         </div>
         </div>
         </div>
@@ -232,7 +230,7 @@ methods:{
     margin-bottom: 45px;
 }
 /* Gate 3 */
-.select-main-class-gate-3{
+.select-gate-3{
   border-style: solid;
   border-right-color: rgba(22, 22, 22, .75);
   color: rgb(22, 22, 22);
@@ -255,7 +253,7 @@ methods:{
   -webkit-box-shadow: 4px 0px 23px 7px rgba(46,46,46,0.58) inset;
   -moz-box-shadow: 4px 0px 23px 7px rgba(46,46,46,0.58) inset;
 }
-.select-main-class-gate-3:hover{
+.select-gate-3:hover{
   filter: invert(0);
   background-color: rgba(255, 255, 255, .90);
   /*  */
@@ -367,7 +365,28 @@ methods:{
   -webkit-box-shadow: 4px 0px 51px 72px rgba(217,217,217,0.51) inset;
   -moz-box-shadow: 4px 0px 51px 72px rgba(217,217,217,0.51) inset;
 }
+.glass-pane-gate-3-row{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
+.glass-pane-gate-3-cell{
+display: flex;
+flex-direction: column;
+width: 22vw;
+/* Stops from snapping when adding an input */
+height: 45vh;
+}
+.optional-input-gate-3-block{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  vertical-align: center;
+}
 /* input */
 .optional-input-gate-3{
   background-color: rgba(255, 255, 255, .55);
@@ -411,21 +430,7 @@ methods:{
 
 /* Any Computer Screen */
 @media screen and (min-device-width: 821px){ 
-.glass-pane-gate-3-row{
-   flex-wrap: calc(70vw);
 
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-
-.glass-pane-gate-3-cell{
-display: flex;
-flex-direction: column;
-width: 22vw;
-height: 45vh;
-}
 
 }
 /* TABLETS */
@@ -435,6 +440,117 @@ height: 45vh;
 }
 /* Phone Screens */
 @media only screen and (max-device-width: 480px) {
+.gate-3-subtitle{
+  font-size: 12.9px;
   
+  letter-spacing: .2px;
+}
+.glass-pane-gate-3{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  padding-top: .01rem;
+  padding-bottom: .4rem;
+  margin-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  border-width: 5px;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  /*  */
+}
+.gate-3-section-title{
+  letter-spacing: 3px;
+  font-size: 22px;
+}
+.glass-pane-gate-3-cell{
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  margin-bottom: 12px;
+}
+.glass-pane-gate-3-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  width: 45%;
+}
+.select-gate-3{
+  border-style: solid;
+  border-right-color: rgba(22, 22, 22, .75);
+  color: rgb(22, 22, 22);
+  background-color: rgba(255, 255, 255, .55);
+  border-right-width: .1rem;
+  border-left-width: 0px;
+  border-top-width: 0px;
+  border-bottom-width: 0px;
+  border-top-left-radius: 59px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 59px;
+  border-bottom-right-radius: 0px;
+  padding-left: 14px;
+  padding-right: 0px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  width: 59%;
+  font-size: 10px;
+  /* inverting back to normal */
+  filter: invert(1);
+  font-family: Mont2;
+  /*  */
+  box-shadow: 4px 0px 23px 7px rgba(46,46,46,0.58) inset;
+  -webkit-box-shadow: 4px 0px 23px 7px rgba(46,46,46,0.58) inset;
+  -moz-box-shadow: 4px 0px 23px 7px rgba(46,46,46,0.58) inset;
+}
+.button-edit-q{
+  width: 40%;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 59px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 59px;
+  padding-right: 14px;
+  padding-left: 7px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-size: 8px;
+  text-align: center;
+  vertical-align: center;
+}
+.optional-input-gate-3{
+  margin-top: 12px;
+  font-size: 11px;
+  margin-bottom: 5px;
+  padding-left: 7px;
+  padding-right: 7px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width: 80%;
+  align-self: center;
+}
+.input-hr{
+  filter: blur(.1px);
+  width: 70%;
+  margin-bottom: 17px;
+}
+.button-gate3-submit{
+  border-style: solid;
+  border-width: 0px;
+  background-color: rgba(255, 255, 255, .55);
+  border-radius: 59px;
+  padding-bottom: 15px;
+  padding-left: 70px;
+  padding-right: 70px;
+  padding-top: 15px;
+  font-size: 17px;
+
+}
 }
 </style>

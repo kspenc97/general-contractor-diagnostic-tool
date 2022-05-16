@@ -1024,7 +1024,11 @@ data(){
 /* Phone Screens */
 @media only screen and (max-device-width: 480px) {
 .home{
-  width: 100vw;
+  width: 390px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding: 10px
 }
 .hero{
   border-radius: 7px;
@@ -1032,10 +1036,11 @@ data(){
   box-shadow:  0px 0px 17px 3px rgba(0,0,0,0.59);
   background-color: rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(7px);
-  width: 185%;
+  width: 130%;
   justify-self: center;
   justify-content: center;
   align-items: center;
+  align-self: center;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;

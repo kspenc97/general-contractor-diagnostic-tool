@@ -3,7 +3,7 @@
     <p class='selector-title-gate-5'>Email Form With Data</p>
 
       <hr>
-      <div v-for="outerObj in this.enteredData" :key="outerObj.name">
+      <div class='gate-5-hero' v-for="outerObj in this.enteredData" :key="outerObj.name">
         <p class="gate-5-section-title" >{{outerObj.name}}</p>
         <div class='inside-title-gate-5'>
           <div 
@@ -81,6 +81,10 @@ methods:{
     console.log(this.contactInfo);
     console.log('gate 5 data below');
     console.log(this.enteredData);
+
+    this.$nextTick(()=>{
+      this.gate5Click();
+    });
   },
 }
 
@@ -92,6 +96,9 @@ methods:{
   filter: invert(1);
   background-color: rgb(165, 165, 165);
 }
+/* .gate-5-hero{
+
+} */
 .gate-5-row{
   display: flex;
   flex-direction: column;
@@ -133,7 +140,7 @@ methods:{
   padding-top: .01rem;
   padding-bottom: 3.4rem;
   margin-top: 30px;
-  background-color: rgba(230, 230, 230, 0.75);
+  background-color: rgba(0, 0, 0, 0.75);
   border-color: rgba(112, 109, 102, 0.7);
   border-width: 5px;
   border-radius: 5px;
