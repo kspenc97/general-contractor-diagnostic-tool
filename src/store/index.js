@@ -8,6 +8,7 @@ export default new Vuex.Store({
     test: 'Herrow',
     formEntrys: [],
     prevAsked: [],
+    prevAskedV2: [],
     gate3Live: [],
   },
   mutations: {
@@ -48,6 +49,14 @@ export default new Vuex.Store({
       return state;
     }
   },
+  updatePrev2(state, potentialAdd){
+    if(state.prevAskedV2.includes(potentialAdd)===false){
+      state.prevAskedV2.push(potentialAdd);
+      return state;
+    }else{
+      return state;
+    }
+  },
   newG3(state, newG3){
     if(newG3 === 'clear'){
       state.gate3Live =[];
@@ -62,6 +71,9 @@ export default new Vuex.Store({
     },
     addPrev({commit}, prevQ){
       commit('updatePrev', prevQ);
+    },
+    addPrevV2({commit}, prevQ){
+      commit('updatePrevV2', prevQ);
     },
     updateG3({commit}, datag3){
       commit('newG3', datag3);

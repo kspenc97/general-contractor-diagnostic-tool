@@ -93,6 +93,7 @@ data(){
 computed:
   mapState({
     alreadyAsked: state => state.prevAsked,
+    alreadyAskedV2: state => state.prevAskedV2,
     currentG3: state => state.gate3Live
   }),
   
@@ -101,18 +102,28 @@ computed:
 methods:{
    ...mapActions([
       'addPrev',
+      'addPrevV2',
       'updateG3',
     ]),
     computeG3(){
-    this.importedData = this.currentG3;
+      this.importedData = this.currentG3.filter(inGlobal=>{
+        if(this.alreadyAskedV2.includes(inGlobal.id) === false ){
+          return inGlobal
+        }
+      });
+    },
+    computeG3Initial(){
+      this.importedData = this.currentG3;
     },
     gate3Click(){
-      /* Adding to global state to stop duplicates  */
-      console.log(this.alreadyAsked);
+      
+
+      //Adding to global state tray 2 to stop duplicates
       this.importedData.forEach((question)=>{
-          this.addPrev(question.id);
-        });   
-      /*  */
+          this.addPrevV2(question.id);
+        }); 
+          
+
       this.$emit('GateThreeEmit', this.importedData);
       this.updateG3('clear');
     },
@@ -147,9 +158,17 @@ methods:{
     },
   },
   created(){
+    console.log('created ran');
+
+ /*    
+    // 1. puts global state into this.importedData local state
     this.computeG3();
-    //Bringing imported data in and making it into an easier format to reassign parts of the selected data 
-    //and perpairing said data for export to the final custamizable form step
+ */
+
+    // 2. Bringing imported data in and making it into an easier format to 
+    // reassign parts of the selected data 
+    // and pre-pairing said data for export to the final custamizable form step
+
     this.dataFromOuter.forEach((bigObj)=>{
         let name = bigObj.name;
         let narrower = bigObj.narrower;
@@ -176,20 +195,33 @@ methods:{
       packedItems: packedItems,
     });
   });
+
+//3.
   /* STOPS DUPLICATES TO GATE 4 START */
+    console.log('before duplicates');
+    console.log(this.dataFromOuter);
+    // 11. make the dataFromOuter local state a filtered version where no id's currently on the this.alreadyAsked tray are in it
   this.dataFromOuter = this.dataFromOuter.filter((question)=>{
-    if(!this.alreadyAsked.includes(question.id)){
+    if(this.alreadyAsked.includes(question.id) === false && this.alreadyAskedV2.includes(question.id) === false){
       return question;
     }
   });
+
+
+    // 22. Stops duplicates if they're never exported to gate 4
+  this.dataFromOuter.forEach((question)=>{
+          this.addPrev(question.id);
+        });   
+
   /* STOPS DUPLICATES TO GATE 4 END */
-  ///////////////////////////////////////////////
-  //Puts questions that are going to be asked in gate3 into global state to stop overwriting if user adds more
+
+
+    // 3. Puts questions that are going to be asked in gate3 into global state to stop overwriting if user adds more
   this.dataFromOuter.forEach((dataObj) =>{
-    this.updateG3(dataObj);
-  });
-  //Gets whatever is in global state for g3 into local
-  this.computeG3();
+      this.updateG3(dataObj);
+          });
+    // 4. MANUALLY reloads global G3 state into local
+  this.computeG3Initial();
   },
 }
 
