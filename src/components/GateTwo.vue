@@ -129,14 +129,11 @@ methods:{
 }
 
 .selector-title-gate-2{
-  font-size: 38px;
+  font-size: 50px;
   font-family: Mont2;
 
 }
-.selector-title-gate-2-not-showing{
-  font-size: 38px;
-  font-family: Mont2;
-}
+
 .select-main-class-gate-2{
   border-style: solid;
   bottom: 10px;
@@ -437,15 +434,6 @@ methods:{
     font-size: 32px;
     margin-bottom: 28px;
   }
-  .selector-title-gate-2-not-showing{
-    align-self: center;
-    justify-content: center;
-    align-items: center;
-    margin-right: 15px;
-    font-size: 32px;
-    margin-bottom: 28px;
-  }
-
   .select-main-class-gate-2{
        padding: 20px;
     width: 59%;
