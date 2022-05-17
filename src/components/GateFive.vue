@@ -5,19 +5,21 @@
       <hr>
       <div class='gate-5-hero' v-for="outerObj in this.enteredData" :key="outerObj.name">
         <p class="gate-5-section-title" >{{outerObj.name}}</p>
+        <hr class='line-under-question-gate-5'>
         <div class='inside-title-gate-5'>
           <div 
+           class='each-box-gate-5'
             v-for="packedItem in outerObj.packedItems" 
             :key="packedItem.user_input_id" 
             >
           <!-- GLASS PANE START -->  
           <div class="glass-pane-gate-5" >
             <div class="gate-5-row" >
-            <p class="gate-5-subtitle">Question: {{packedItem.question}}</p>
+            <p class="gate-5-subtitle-1-question">Question: {{packedItem.question}}</p>
               <div v-if="packedItem.answersArr[0] !== 'INPUT'">
-                <p>Selected Answer: {{packedItem.currentAnswer}}</p>
+                <p class="gate-5-subtitle-2-user-answer">Selected Answer: {{packedItem.currentAnswer}}</p>
               </div>
-                <p>User Input: {{packedItem.currentInput}}</p>
+                <p class="gate-5-subtitle-3-user-input">User Input: {{packedItem.currentInput}}</p>
             </div>
           <br>
         <!-- GLASS PANE END -->
@@ -27,8 +29,6 @@
         
         </div>
         </div>
-        <hr class='end-hr'>
-        <button class='button-gate3-submit' @click="gate5Click">Submit</button>
 
   </div>
 </template>
@@ -91,10 +91,21 @@ methods:{
 </script>
 
 <style>
+.gate-5-hero{
+  display: flex;
+  flex-direction: column;
+ justify-content: right;
+  align-content: right;
+  align-items: right;
+  justify-items: right;
+}
 .selector-outer-gate-5{
   overflow: hidden;
+  width: auto;
+  height: auto;
+
   filter: invert(1);
-  background-color: rgb(165, 165, 165);
+  background-color: rgb(164, 153, 134);
 }
 /* .gate-5-hero{
 
@@ -102,22 +113,49 @@ methods:{
 .gate-5-row{
   display: flex;
   flex-direction: column;
+  text-align: left;
+  width: 100%;
+  align-content: left;
+  justify-content: left;
 }
 .selector-title-gate-5{
+
   font-family: Mont2;
   letter-spacing: 15px;
   font-size: 45px;
 }
+
 .inside-title-gate-5{
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  width: 2550px;
+  height: 100%;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
+.each-box-gate-5{
+  display: flex;
+  justify-content: right;
+  align-content: right;
+  align-items: right;
+  justify-items: right;
+  align-self: right;
+  
+  flex-direction: column;
+  width: 100%;
+}
 .gate-5-section-title{
-  font-family: Mont2;
+  font-family: Mont;
   letter-spacing: 15px;
-  font-size: 45px;
+  font-size: 59px;
+  color: #2c3e50;
+}
+.line-under-question-gate-5{
+  color: #2c3e50;
+  border-color: inherit;
+  background-color: #2c3e50;
+  border-color: #2c3e50;
+  width: 77%;
 }
 .gate-5-subtitle{
   font-family: Mont2;
@@ -129,26 +167,50 @@ methods:{
   -moz-text-shadow: 0px 18px 126px 40px rgba(74,74,74,1);
   letter-spacing: 4.5px;
 }
+.gate-5-subtitle-1-question{
+  font-family: Mont;
+  font-size: 41px;
+  letter-spacing: 1px;
+  color: rgba(247, 243, 187, 0.85);
+}
+.gate-5-subtitle-2-user-answer{
+  font-family: Mont2;
+  font-size: 51px;
+  letter-spacing: 2px;
+  color: rgba(247, 243, 187, 0.85);
+}
+.gate-5-subtitle-3-user-input{
+  font-family: Mont2;
+  font-size: 51px;
+  letter-spacing: 2px;
+  flex-wrap: wrap;
+  word-wrap: normal;
+  color: rgba(247, 243, 187, 0.85);
+}
 .glass-pane-gate-5{
+  border-top-right-radius: 51px;
+  border-bottom-right-radius: 51px;
+  border-bottom-style: solid;
+  border-bottom-color: rgba(0, 0, 0, 0.9);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  height: 10vh;
-  width: 90vw;
-  flex-direction: row;
+  width: 95%;
   filter: contrast(1.15);
-  padding-top: .01rem;
-  padding-bottom: 3.4rem;
-  margin-top: 30px;
+  padding-top: 1.4rem;
+  padding-bottom: 1.4rem;
+  margin-top: 17px;
+  margin-bottom: 17px;
   background-color: rgba(0, 0, 0, 0.75);
   border-color: rgba(112, 109, 102, 0.7);
   border-width: 5px;
-  border-radius: 5px;
-  padding-left: 25px;
-  padding-right: 25px;
-
+  padding-left: 17px;
+  padding-right: 17px;
+  /*  */
+  box-shadow: 4px 0px 14px 7px rgba(46,46,46,0.78) inset;
+  -webkit-box-shadow: 4px 0px 14px 7px rgba(46,46,46,0.78) inset;
+  -moz-box-shadow: 4px 0px 14px 7px rgba(46,46,46,0.78) inset;
 }
-
 
 
 /* input */

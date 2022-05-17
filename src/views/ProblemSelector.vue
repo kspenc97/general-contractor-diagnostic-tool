@@ -758,16 +758,16 @@ import arrow from './assets/homepage/arrow.svg';
       width: 90vw;
       height: 100vh;
       }
-.selector-title-gate-2-ghost-not-showing{
-  font-family: Mont2;
+    .selector-title-gate-2-ghost-not-showing{
+      font-family: Mont2;
 
-   align-self: center;
-    justify-content: center;
-    align-items: center;
-    margin-right: 15px;
-    font-size: 32px;
-    margin-bottom: 28px;
-}
+      align-self: center;
+        justify-content: center;
+        align-items: center;
+        margin-right: 15px;
+        font-size: 32px;
+        margin-bottom: 28px;
+    }
             .gate-outer-gate-2{
               height: 100%;
                       width: 100%;
