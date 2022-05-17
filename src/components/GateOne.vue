@@ -4,7 +4,7 @@
   <div>
       <form class='form-gate-1' action="submit" @submit.prevent="gate1Click('gate1Export', $event)">
 
-<!-- 
+
         <div class='contact-section-gate-1'>
               <p class='selector-title-gate-1'>Contact Information</p>
               <div class='contact-row-gate-1'>
@@ -24,7 +24,7 @@
                   <input v-model="contactCity" class="contact-input-gate-1" type="text" placeholder="City">
                 </div>
       </div>
- -->
+
 
       <div class='select-and-button-gate-1'>
         <p class='selector-title-gate-1'>What part of the home is the problem located at?</p>
@@ -76,6 +76,7 @@ computed: {
 },
 methods:{
     gate1Click(){
+      console.log(this.contactInfoExport);
         this.$emit('GateOneEmit', {gate1Export: {
           sectorFromGate1: this.selectedSector,
           contactInfoGate1: this.contactInfoExport,

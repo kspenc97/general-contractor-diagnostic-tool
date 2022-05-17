@@ -1,7 +1,23 @@
 <template> 
   <div class='selector-outer-gate-5' id="gate-5-final-form"  ref="gate5final">
-    <p class='selector-title-gate-5'>Email Form With Data</p>
+    <p class='selector-title-gate-5'>Customer Diagnostic Form</p>
+    <!-- CONTACT AREA -->
+    <div class='contact-area-gate-5'>
+      <div class='box-contact-gate-5'>
+        <p class="customer-data-gate-5">Name - {{this.contactDataObject.contactName}}</p>
+      </div>
+      <div class='box-contact-gate-5'>
+        <p class="customer-data-gate-5">Phone - {{this.contactDataObject.contactPhone}}</p>
+      </div>
+      <div class='box-contact-gate-5'>
+        <p class="customer-data-gate-5">Email - {{this.contactDataObject.contactEmail}}</p>
+      </div>
+      <div class='box-contact-gate-5'>
+        <p class="customer-data-gate-5">City - {{this.contactDataObject.contactCity}}</p>
+      </div>
 
+    </div>
+    <!-- END CONTACT AREA -->
       <hr>
       <div class='gate-5-hero' v-for="outerObj in this.enteredData" :key="outerObj.name">
         <p class="gate-5-section-title" >{{outerObj.name}}</p>
@@ -44,7 +60,7 @@ props:['contactInfo', 'enteredData'],
 
 data(){
     return{
-  
+      contactDataObject: {},
     }
 },
 methods:{
@@ -77,11 +93,21 @@ methods:{
   },
 
   created(){
+    let forForm5Contact =  {
+      contactName: this.contactInfo.contactName,
+      contactPhone: this.contactInfo.contactPhone,
+      contactEmail: this.contactInfo.contactEmail,
+      contactCity: this.contactInfo.contactCity
+      };
+    this.contactDataObject = forForm5Contact;
+
+/*     
     console.log('gate 5 contact info below');
     console.log(this.contactInfo);
+    console.log(this.contactDataObject);
     console.log('gate 5 data below');
     console.log(this.enteredData);
-
+ */
     this.$nextTick(()=>{
       this.gate5Click();
     });
@@ -124,7 +150,28 @@ methods:{
   letter-spacing: 15px;
   font-size: 45px;
 }
+.contact-area-gate-5{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  /*  */
+  background-color: rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 17px 11px rgba(46,46,46,0.87) inset;
+  -webkit-box-shadow: 0px 0px 17px 11px rgba(46,46,46,0.87) inset;
+  -moz-box-shadow: 0px 0px 17px 11px rgba(46,46,46,0.87) inset;
+}
+.box-contact-gate-5{
+  width: 45%;
+}
+.customer-data-gate-5{
+  font-family: Mont2;
+  color: rgba(247, 243, 187, 0.85);
+  font-size: 34px;
+  letter-spacing: 1px;
 
+}
 .inside-title-gate-5{
   display: flex;
   flex-direction: column;

@@ -149,16 +149,27 @@ methods: {
   gate1Click(fromGateOne){
     // 1. setting what triggers computed property
     this.selectedSector = fromGateOne.gate1Export.sectorFromGate1;
+    console.log(fromGateOne);
+/*  */
+
+/* 
+        this.contactDataObject.contactName
+        this.contactDataObject.contactPhone
+        this.contactDataObject.contactEmail
+       this.contactDataObject.contactCity
+ */
+
+/*  */
     this.currentBg = fromGateOne.gate1Export.sectorFromGate1;
     this.updateBgImage();
     // 2. getting return from computed property and setting to local state binded to gate 2
     this.forGateTwo = this.subSectorReturn;
     // 3. Assigning values to the formExport Object exported from gate1
-    Object.assign(this.formExport, fromGateOne);
-/* 
+    this.formExport = fromGateOne.gate1Export.contactInfoGate1;
+
     console.log('After Gate 1 - Current Form Export is below')
     console.log(this.formExport);
-     */
+    
     // 3. gate flip
     //this.gate1 = false;
     this.gate2 = true;

@@ -3,55 +3,57 @@ export const OUTDOOR_SECTORS = {
     sectors: [
       {
         name: 'Garage',
-        id: 'kitchen_sector',
-        imageClass: 'bg-kitchen-1',
+        id: 'garage_sector',
+        imageClass: 'bg-garage-1',
         subSectors: [
           {
-              name: "Stove",
-              id: "kitchen_stove_sub",
+              name: "Garage Door",
+              id: "garage_door_sub",
               narrower:[
                 {
-                    sub_cat: "kitchen_stove_sub",
-                    question: 'Is the Stove turning on?',
-                    user_input_id:'is_stove_on',
+                    sub_cat: "garage_door_sub",
+                    question: 'Is the garage door opening?',
+                    user_input_id:'garage_door_opening',
                     answers: [
-                        'Yes it is turning on',
-                        'No it isn\'t turning on',
-                        'It is sometimes turning on'
+                        'Yes it is opening',
+                        'No it isn\'t opening',
+                        'It is opening halfway then sticking',
+                        'It is opening halfway then closing again',
+                        'It is opening all the way and Immediatly staying closed',
+                        'It is opening all the way then closing again after a period of time'
                     ]
                 },
                 {
-                    sub_cat: "kitchen_stove_sub",
-                    question: 'Tell me about the temperature?',
-                    user_input_id:'stove_temperature',
+                    sub_cat: "garage_door_sub",
+                    question: 'Is there any visible damage to the  track?',
+                    user_input_id:'garage_door_track_general',
                     answers: [
-                        'To Hot',
-                        'To Cold',
-                        'To Hot Sometimes',
-                        'To Cold Sometimes'
+                        'The slider is off the track',
+                        'The track is bent',
+                        'The slider is making a screeching noise then stopping on the track',
+                        'The track punctured the ceiling',
                     ]
                 },
                 {
-                    sub_cat: "kitchen_stove_sub",
-                    question: 'Is the screen on?',
-                    user_input_id:'screen_on_or_off',
-                    answers: [
-                        'Yes',
-                        'No',
-                    ]
-                },
-                {
-                    sub_cat: "kitchen_stove_sub",
-                    question: 'Enter any Screen error message below',
-                    user_input_id:'stove_screen_error_message',
+                    sub_cat: "garage_door_sub",
+                    question: 'Describe any noise the slider is making as it moves along the track (i.e. screeching, grinding, scraping)',
+                    user_input_id:'garage_slider_noise_description',
                     answers: [
                         'INPUT'
                     ]
                 },
                 {
-                    sub_cat: "kitchen_stove_sub",
-                    question: 'Enter the brand name of the stove here:',
-                    user_input_id:'stove_brand_name',
+                    sub_cat: "garage_door_sub",
+                    question: 'Describe any noise the motor is making (i.e. screeching, grinding, scraping)',
+                    user_input_id:'garage_motor_noise_description',
+                    answers: [
+                        'INPUT'
+                    ]
+                },
+                {
+                    sub_cat: "garage_door_sub",
+                    question: 'Type in any brand name visible on the motor',
+                    user_input_id:'garage_motor_brand',
                     answers: [
                         'INPUT'
                     ]
@@ -93,8 +95,7 @@ export const OUTDOOR_SECTORS = {
                 ]
               },
             ],
-        },
-          
+          },
         ],/* <--- SubSectors End */
       },
       {
