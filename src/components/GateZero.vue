@@ -211,11 +211,11 @@ data(){
 
 
    .button-select-merge-gate-0-left{
-     padding: 20px;
+     padding: 10px;
      width: 45%;
    }
    .button-select-merge-gate-0-right{
-     padding: 20px;
+     padding: 10px;
      width: 45%;
 
    }

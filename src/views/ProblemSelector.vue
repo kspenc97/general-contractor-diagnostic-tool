@@ -407,7 +407,7 @@ beforeMount(){
   background-image: url('~@/assets/bg-images/bg-kitchen-2.jpg');
   background-repeat: repeat;
   background-size: cover;
-  height: 100vh;
+  height: 100%;
   position: fixed;
   top: 0; left: 0; bottom: 0; right: 0;
   z-index: -10;
@@ -677,15 +677,26 @@ import arrow from './assets/homepage/arrow.svg';
       .gate4{
         width: 90vw;
       }
-       .gate-outer-gate-2{
-              border-top-width: 10px;
-              border-left-width: 15px;
-              border-bottom-width: 5px;
-              border-right-width: 15px;
-              border-style: solid;
-              border-color: rgba(204, 199, 187, 0.8);
-              filter: invert(1); 
-            }
+.gate-outer-gate-2{
+    border-top-width: 10px;
+    border-left-width: 15px;
+    border-bottom-width: 5px;
+    border-right-width: 15px;
+    border-style: solid;
+    border-color: rgba(204, 199, 187, 0.8);
+    filter: invert(1); 
+  }
+/*             .gate-outer-gate-2{
+  box-sizing: border-box;
+  border-top-width: 10px;
+  border-left-width: 4.9px;
+  border-bottom-width: 5px;
+  border-right-width: 10px;
+  border-style: solid;
+  border-color: rgba(204, 199, 187, 0.8);
+  filter: invert(1);
+  
+} */
       .gate-outer-gate-3{
               border-top-width: 10px;
               border-left-width: 23px;
@@ -728,6 +739,14 @@ import arrow from './assets/homepage/arrow.svg';
 }
 /* Phone Screens */
 @media only screen and (max-device-width: 480px) {
+  .problem-selector-hero{
+      margin-right: 5%;
+      margin-left: 1%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
   .top-2-gates{
     flex-direction: column;
     }
@@ -735,14 +754,14 @@ import arrow from './assets/homepage/arrow.svg';
         width: 90vw;
         height: 100%;
       }
-.gate2{
-  width: 90vw;
-  height: 100vh;
-  }
+    .gate2{
+      width: 90vw;
+      height: 100vh;
+      }
 
             .gate-outer-gate-2{
               height: 100%;
-                      width: 90vw;
+                      width: 100%;
 
               border-top-width: 10px;
               border-left-width: 15px;

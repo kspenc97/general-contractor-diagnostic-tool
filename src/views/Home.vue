@@ -6,11 +6,11 @@
 <div class="hero">
       <div class='container'>
       <div class='topBar'>
-      <img class='homepage-logo' src="../assets/homepage/new-site-logo.png" width="315" height="135" />
+      <img class='homepage-logo' src="../assets/homepage/new-site-logo.png"/>
       <div class='btnCont'>
             <router-link to="/">      
             <button class='clearBtn'>Home</button>
-            </router-link> | 
+            </router-link><p class='top-bar-btn-spacer'> | </p>
             <router-link to="/problem-selector">
             <button class='clearBtn'>Diagnostic Tool</button>
             </router-link>
@@ -209,7 +209,7 @@
 
 </template>
 
-<script>
+<script scoped>
 //import socialImg1 from '../assets/homepage/fb.png';
 
 
@@ -244,7 +244,21 @@ data(){
   src: url('~@/assets/fonts/Montserrat-Light.ttf');
 }
 
+.home-bg{
+  background-image: url('~@/assets/homepage/side-bg/home-side-bg-10.jpg');
+  background-repeat: repeat;
+  background-size: cover;
+  height: 100vh;
+  position: fixed;
+  top: 0; left: 0; bottom: 0; right: 0;
+  z-index: -10;
+  filter: contrast(.5) blur(2px);
 
+  /*  */
+  box-shadow: 4px 0px 23px 7px rgba(46,46,46,0.58) inset;
+  -webkit-box-shadow: 4px 0px 23px 7px rgba(46,46,46,0.58) inset;
+  -moz-box-shadow: 4px 0px 23px 7px rgba(46,46,46,0.58) inset;
+}
 
 .brand-logo{
   background-image: url('~@/assets/homepage/AcreTrader_Logo.jpg');
@@ -259,21 +273,23 @@ data(){
 
 .homepage-logo{
   cursor: pointer;
+  width: 315px; 
+  height: 135px;
 }
 
   .hero{
-
+    display: flex;
+    flex-direction: column;
   align-items: center;
   justify-content: center;
   align-content: center;
   justify-self: center;
   justify-items: center;
   position: relative;
-
-  left:-webkit-calc(100% - 90%);
-  top: 0;
-  width: 80%;
-
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 90%;
+  box-sizing: border-box;
   border-radius: 7px;
   -webkit-box-shadow:  0px 0px 17px 3px rgba(0,0,0,0.59); 
   box-shadow:  0px 0px 17px 3px rgba(0,0,0,0.59);
@@ -314,6 +330,7 @@ data(){
 .topBar{
   align-items: center;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   font-family: Mont2;
   background-color: rgba(0,0,0,0.0);
@@ -329,8 +346,13 @@ data(){
   margin-right: 300px;
 }
 .btnCont{
+  display: flex;
   flex-direction: row;
-  
+  vertical-align: center;
+}
+.top-bar-btn-spacer{
+ bottom: 8px;
+ position: relative;
 }
 .clearBtn{
    cursor: pointer;
@@ -589,7 +611,7 @@ data(){
   font-weight: 600;
   text-align: center;
   font-family: Mont2;
-  width: 80%;
+  width: 90%;
   align-self: center;
 }
 .interTitle-text{
@@ -758,13 +780,17 @@ data(){
 }
 .interTitle-2-left{
   padding-left: 5%;
+      font-family: Mont2;
+
 }
 .interTitle-2-right{
+  font-family: Mont2;
   color: rgb(0, 148, 148);
   padding-right: 5%;
 }
 .interTitle-2-right:hover{
   color: rgb(0, 207, 207);
+
 }
 
 
@@ -979,21 +1005,7 @@ data(){
 /* Any Computer Screen */
 @media screen and (min-device-width: 821px){ 
 
-.home-bg{
-  background-image: url('~@/assets/homepage/side-bg/home-side-bg-10.jpg');
-  background-repeat: repeat;
-  background-size: cover;
-  height: 100vh;
-  position: fixed;
-  top: 0; left: 0; bottom: 0; right: 0;
-  z-index: -10;
-  filter: contrast(.5) blur(2px);
 
-  /*  */
-  box-shadow: 4px 0px 23px 7px rgba(46,46,46,0.58) inset;
-  -webkit-box-shadow: 4px 0px 23px 7px rgba(46,46,46,0.58) inset;
-  -moz-box-shadow: 4px 0px 23px 7px rgba(46,46,46,0.58) inset;
-}
 
 
 }
@@ -1013,7 +1025,7 @@ data(){
   background-size: cover;
   position: fixed;
   top: 0; left: 0; bottom: 0; right: 0;
-  z-index: -10;
+  z-index: -2;
   filter: contrast(.5) blur(2px);
   /*  */
   box-shadow: 4px 0px 23px 7px rgba(46,46,46,0.58) inset;
@@ -1024,11 +1036,15 @@ data(){
 /* Phone Screens */
 @media only screen and (max-device-width: 480px) {
 .home{
-  width: 390px;
+    top: 0; left: 0; bottom: 0; right: 0;
+  width: 100%;
   justify-content: center;
+  align-items: center;
+  align-content: center;
+  justify-items: center;
   display: flex;
   flex-direction: column;
-  padding: 10px
+  box-sizing: border-box;
 }
 .hero{
   border-radius: 7px;
@@ -1044,17 +1060,18 @@ data(){
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-
+  position: relative;
+  left: 15%;
 }
 .container{
-  width: 95%;
+  width: 100%;
   flex-direction: column;
   justify-self: center;
-  
 }
 .topBar{
   align-items: center;
   display: flex;
+  flex-direction: column;
   justify-content: space-evenly;
   font-family: Mont2;
   background-color: rgba(0,0,0,0.0);
@@ -1066,22 +1083,23 @@ data(){
 }
 .btnCont{
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   vertical-align: center;
 }
 .clearBtn{
   text-decoration: underline;
+  margin-top: 10px;
   margin-bottom: 10px;
 }
 .home-bg{
   background-image: url('~@/assets/homepage/side-bg/home-side-bg-10.jpg');
-  background-repeat: repeat;
+  background-repeat: no-repeat;
   background-size: cover;
   position: fixed;
   top: 0; left: 0; bottom: 0; right: 0;
   z-index: -10;
   filter: contrast(.5) blur(2px);
-
+  height: 100%;
   /*  */
   box-shadow: 4px 0px 23px 7px rgba(46,46,46,0.58) inset;
   -webkit-box-shadow: 4px 0px 23px 7px rgba(46,46,46,0.58) inset;
@@ -1107,27 +1125,28 @@ data(){
   font-family: Mont2;
   filter: contrast(1.1);
   box-sizing: border-box;
-
-  
 }
-
-
-
+.homepage-logo{
+  cursor: pointer;
+  width: 215px; 
+  height: 75px;
+}
 .imgTitle{
   backdrop-filter: blur(3px);
 }
 .imgTitle-p{
   box-sizing: border-box;
-  align-content: center;
-  align-items: center;
-  justify-content: center;
-  justify-items: center;
+  align-content: left;
+  align-items: left;
+  justify-content: left;
+  justify-items: left;
   color: #101010;
   font-family: Mont;
-  width: 80%;
-  font-size: 35px;
+  width: 50%;
+  font-size: 25px;
   position: absolute;
-  left: 7.5%;
+  left: 3%;
+  top: 30px;
 }
 .imgSubtitle{
   position: absolute;
@@ -1179,8 +1198,7 @@ data(){
 .imageRow2{
   flex-direction: row;
   flex-wrap: wrap;
-    top: 450px;
-
+  top: 450px;
   width: 80%;
   backdrop-filter: blur(20px);
   font-family: Mont2;
@@ -1240,6 +1258,13 @@ data(){
     text-align: left;
 
 }
+.interTitle-2-left{
+  font-size: 17px;
+}
+.interTitle-2-right{
+  font-size: 17px;
+
+}
 .cardRow{
   display: flex;
   flex-direction: row;
@@ -1252,16 +1277,20 @@ data(){
   justify-content: space-evenly;
 }
 .card1{
-  width: 300px;
+  width: 210px;
+  height: 240px;
 }
 .card2{
-  width: 300px;
+  width: 210px;
+  height: 240px;
 }
 .card3{
-  width: 300px;
+   width: 210px;
+  height: 240px;
 }
 .card4{
-  width: 300px;
+   width: 210px;
+  height: 240px;
 }
 
 .bottomCol-far-left{

@@ -2,7 +2,7 @@
   <div class='selector-outer-gate-3'>
     <div class='gate-3-full-background'>
     <p class='selector-title'>Give me some specific details about this issue</p>
-    <p class='selector-subtitle'>** You are <u class='not-underline'>not</u> required to fill out all sections to submit the form **</p>
+    <p class='selector-subtitle-gate-3'>** You are <u class='not-underline'>not</u> required to fill out all sections to submit the form **</p>
       <form action="submit" @submit.prevent="gate3Click('message', $event)">
       <hr>
         <div  v-for="outerObj in this.importedData" :key="outerObj.name">
@@ -60,7 +60,7 @@
         </div>
         </div>
         <hr class='end-hr'>
-        <button class='button-gate3-submit' @click="gate3Click">Submit</button>
+        <button class='button-gate3-submit' @click="gate3Click">Next Step</button>
     </form>
     </div>
   </div>
@@ -331,6 +331,9 @@ methods:{
   -moz-text-shadow: 0px 18px 126px 40px rgba(74,74,74,1);
   letter-spacing: 4.5px;
 }
+.selector-subtitle-gate-3{
+  font-size: 25px;
+}
 .section-hr{
   margin-top: 34px;
   margin-bottom: 11px;
@@ -474,6 +477,8 @@ height: 45vh;
   flex-wrap: wrap;
   width: 100%;
   height: 100%;
+  padding-right: 5px;
+  padding-left: 5px;
   margin-bottom: 12px;
 }
 .glass-pane-gate-3-row{
@@ -482,6 +487,12 @@ height: 45vh;
   justify-content: space-evenly;
   flex-wrap: wrap;
   width: 45%;
+}
+.selector-title{
+  font-size: 27px;
+}
+.selector-subtitle-gate-3{
+  font-size: 21px;
 }
 .select-gate-3{
   border-style: solid;
@@ -498,9 +509,9 @@ height: 45vh;
   border-bottom-right-radius: 0px;
   padding-left: 14px;
   padding-right: 0px;
-  padding-top: 14px;
-  padding-bottom: 14px;
-  width: 59%;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: 61%;
   font-size: 10px;
   /* inverting back to normal */
   filter: invert(1);
@@ -511,7 +522,7 @@ height: 45vh;
   -moz-box-shadow: 4px 0px 23px 7px rgba(46,46,46,0.58) inset;
 }
 .button-edit-q{
-  width: 40%;
+  width: 39%;
   border-top-left-radius: 0px;
   border-top-right-radius: 59px;
   border-bottom-left-radius: 0px;

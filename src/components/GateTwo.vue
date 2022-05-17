@@ -129,12 +129,12 @@ methods:{
 }
 
 .selector-title-gate-2{
-  font-size: 50px;
+  font-size: 38px;
   font-family: Mont2;
 
 }
 .selector-title-gate-2-not-showing{
-  font-size: 50px;
+  font-size: 38px;
   font-family: Mont2;
 }
 .select-main-class-gate-2{
@@ -430,6 +430,14 @@ methods:{
 
 
   .selector-title-gate-2{
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    margin-right: 15px;
+    font-size: 32px;
+    margin-bottom: 28px;
+  }
+  .selector-title-gate-2-not-showing{
     align-self: center;
     justify-content: center;
     align-items: center;

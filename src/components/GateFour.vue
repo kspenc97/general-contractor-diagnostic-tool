@@ -57,7 +57,7 @@
           <!-- IF INPUT ONLY -->
           <div v-if="packedItem.answersArr[0] === 'INPUT'">
             <input 
-                class="optional-input" 
+                class="optional-input-gate-4" 
                 type="text" 
                 placeholder="Enter additional information about issue here..."
                 v-model="packedItem.currentInput"
@@ -80,7 +80,7 @@
         </div>
         </div>
         <hr class='end-hr'>
-        <button class='button-gate3-submit' @click="gate4Click">Submit</button>
+        <button class='button-gate-4-submit' @click="gate4Click">Submit Service Form</button>
     </form>
   </div>
 </template>
@@ -192,8 +192,8 @@ computed:
 }
 .gate-4-section-title{
   font-family: Mont2;
-  letter-spacing: 15px;
-  font-size: 45px;
+  letter-spacing: 12px;
+  font-size: 35px;
 }
 .gate-4-subtitle{
   font-family: Mont2;
@@ -203,26 +203,37 @@ computed:
   text-shadow: 0px 18px 126px 40px rgba(74,74,74,1);
   -webkit-text-shadow: 0px 18px 126px 40px rgba(74,74,74,1);
   -moz-text-shadow: 0px 18px 126px 40px rgba(74,74,74,1);
-  letter-spacing: 4.5px;
+  letter-spacing: 2.5px;
 }
 .glass-pane-gate-4{
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
-  height: 40vh;
-  width: 200px;
+  height: 380px;
+  width: 250px;
   flex-direction: column;
   filter: contrast(1.15);
   padding-top: .01rem;
   padding-bottom: 3.4rem;
   margin-top: 30px;
-  background-color: rgba(230, 230, 230, 0.75);
-  border-color: rgba(112, 109, 102, 0.7);
-  border-width: 5px;
+  background-color: rgba(230, 230, 230, 0.59);
+  border-style: none;
   border-radius: 5px;
-  padding-left: 25px;
-  padding-right: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  /*  */
+  box-shadow: 0px 0px 17px 7px rgba(46,46,46,0.78) inset;
+  -webkit-box-shadow: 0px 0px 17px 7px rgba(255, 255, 255, 0.78) inset;
+  -moz-box-shadow: 0px 0px 17px 7px rgba(46,46,46,0.78) inset;
 
 }
+
 /* select */
 .select-gate-4{
   border-style: solid;
@@ -253,14 +264,14 @@ computed:
 
 /* input */
 .optional-input-gate-4{
+  box-sizing: border-box;
   background-color: rgba(255, 255, 255, .55);
   filter: invert(1);
-  border-style: solid;
-  border-width: 0;
+  border-style: none;
   margin-top: 21px;
   margin-bottom: 21px;
   padding: 20px;
-  width: 80%;
+  width: 90%;
   border-radius: 59px;
   /* outer shadow */
   box-shadow: 12px 38px 114px 25px rgba(74,74,74,0.81);
@@ -285,14 +296,14 @@ computed:
 .button-gate-4{
   border-style: solid;
   border-width: 0px;
-  background-color: rgba(255, 255, 255, .55);
+  background-color: rgba(255, 255, 255, .45);
   border-radius: 59px;
   padding: 20px;
   padding-left: 70px;
   padding-right: 70px;
   margin-top: 12px;
   font-size: 17px;
-  margin-bottom: 7px;
+  margin-bottom: 12px;
   filter: invert(1);
   font-family: Mont2;
   z-index: 4;
@@ -310,27 +321,35 @@ computed:
   -moz-box-shadow: -7px 0px 20px 1px rgba(28,28,28,0.17);
 }
 
-
+.button-gate-4-submit{
+   border-style: solid;
+  border-width: 0px;
+  background-color: rgba(255, 255, 255, .45);
+  border-radius: 50px;
+  padding: 20px;
+  padding-left: 50px;
+  padding-right: 59px;
+  margin-top: 12px;
+  font-size: 17px;
+  margin-bottom: 17px;
+  filter: invert(1);
+  font-family: Mont2;
+  z-index: 4;
+  /*  */
+  box-shadow: 4px 0px 23px 7px rgba(46,46,46,0.59) inset;
+  -webkit-box-shadow: 4px 0px 23px 7px rgba(46,46,46,0.59) inset;
+  -moz-box-shadow: 4px 0px 23px 7px rgba(46,46,46,0.59) inset;
+}
+.button-gate4-submit:hover{
+   filter: invert(.1);
+  background-color: rgba(255, 255, 255, .90);
+  /* outer dropshadow */
+  box-shadow: -7px 0px 20px 1px rgba(28,28,28,0.17);
+  -webkit-box-shadow: -7px 0px 20px 1px rgba(28,28,28,0.17);
+  -moz-box-shadow: -7px 0px 20px 1px rgba(28,28,28,0.17);
+}
 
 @media screen and (min-device-width: 821px){ 
-  .glass-pane-gate-4{
-  display: flex;
-  justify-content: center;
-  height: 30vh;
-  width: 200px;
-  flex-direction: column;
-  filter: contrast(1.15);
-  padding-top: .01rem;
-  padding-bottom: 3.4rem;
-  margin-top: 30px;
-  background-color: rgba(230, 230, 230, 0.75);
-  border-color: rgba(112, 109, 102, 0.7);
-  border-width: 5px;
-  border-radius: 5px;
-  padding-left: 25px;
-  padding-right: 25px;
-
-}
 
 
 
@@ -362,25 +381,74 @@ computed:
 }
 /* Phone Screens */
 @media only screen and (max-device-width: 480px) {
- .glass-pane-gate-4{
+  .glass-pane-gate-4{
+  box-sizing: border-box;
   display: flex;
   justify-content: center;
-
-  height: 40vh;
-  width: 270px;
+  justify-items: center;
+  align-content: center;
+  align-items: center;
+  height: 380px;
+  width: 159px;
   flex-direction: column;
   filter: contrast(1.15);
-  padding-top: 1.2rem;
-  padding-bottom: 1.2rem;
+  padding-top: .01rem;
+  padding-bottom: 3.4rem;
   margin-top: 30px;
   background-color: rgba(230, 230, 230, 0.75);
-  border-color: rgba(112, 109, 102, 0.7);
-  border-width: 5px;
-  border-radius: 5px;
-  padding-left: 25px;
-  padding-right: 25px;
-}
+  border-style: none;
+  border-radius: 7px;
+  padding-left: 9px;
+  padding-right: 9px;
+  padding-top: 25px;
+  padding-bottom: 25px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  /*  */
+  box-shadow: 0px 0px 17px 7px rgba(46,46,46,0.78) inset;
+  -webkit-box-shadow: 0px 0px 17px 7px rgba(255, 255, 255, 0.78) inset;
+  -moz-box-shadow: 0px 0px 17px 7px rgba(46,46,46,0.78) inset;
 
+}
+.selector-title-gate-4{
+      letter-spacing: 10px;
+      font-size: 30px;
+  }
+.gate-4-section-title{
+    letter-spacing: 4px;
+    font-size: 20px;
+    margin-bottom: 7px;
+    margin-top: 14px;
+    width: 100%;
+    box-sizing: border-box;
+    padding-right: 8px;
+    padding-left: 8px;
+    text-align: center;
+    align-self: center;
+    justify-self: center;
+    justify-content: center;
+    align-content: center;
+  }
+/* button edit switch */
+.button-gate-4{
+  padding: 15px;
+  padding-left: 45px;
+  padding-right: 45px;
+  margin-top: 12px;
+  font-size: 17px;
+  margin-bottom: 7px;
+}
+/* input */
+.optional-input-gate-4{
+  box-sizing: border-box;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  padding: 17px;
+  width: 95%;
+  border-radius: 59px;
+}
   }
 
 </style>
