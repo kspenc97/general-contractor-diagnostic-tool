@@ -61,37 +61,69 @@ export const OUTDOOR_SECTORS = {
               ],
           },
           {
-            name: "Sink",
-            id: 'kitchen_sink_sub',
+            name: 'Garage Walls',
+            id: 'garage_walls_sub',
             narrower:[
               {
-                    sub_cat: "kitchen_sink_sub",
-                    question: 'Is the Water flowing?',
-                    user_input_id:'kitchen_sink_water_flowing',
+                    sub_cat: 'garage_walls_sub',
+                    question: 'Is there a hole in the garage walls?',
+                    user_input_id:'garage_walls_sub_holes',
                     answers: [
-                        'Yes',
-                        'No',
-                        'Sometimes'
+                        'One',
+                        'Multiple',
+                        'Larger hole then a fist size',
                     ]
               },
               {
-                    sub_cat: "kitchen_sink_sub",
-                    question: 'How is the water flowing?',
-                    user_input_id:'kitchen_sink_water_pressure',
-                    answers: [
-                        'Too Fast',
-                        'Too Slow',
-                        'Erraticly'
-                    ]
-              },
-              {
-                sub_cat: "kitchen_sink_sub",
-                question: 'Is the water flowing out of the proper spot?',
-                user_input_id:'kitchen_sink_water_flow_location',
+                sub_cat: 'garage_walls_sub',
+                question: 'What material are the garage walls constructed with?',
+                user_input_id:'garage_walls_sub_material-1',
                 answers: [
-                    'Partially the correct location',
-                    'Completely incorrect location',
-                    'Erratic'
+                    'drywall',
+                    'wood',
+                    'vinyl',
+                    'stone',
+                    'plastic',
+                    'brick',
+                ]
+              },
+              {
+                sub_cat: 'garage_walls_sub',
+                question: 'What secondary material are the garage walls constructed with?',
+                user_input_id:'garage_walls_sub_material-2',
+                answers: [
+                    'drywall',
+                    'wood',
+                    'vinyl',
+                    'stone',
+                    'plastic',
+                    'brick',
+                ]
+              },
+              {
+                sub_cat: 'garage_walls_sub',
+                question: 'What you can you see through the hole in the wall?',
+                user_input_id:'garage_walls_inner_wall_1',
+                answers: [
+                    'electrical wires',
+                    'the next room',
+                    'home insulation',
+                    'brick',
+                    'wood',
+                    'water/flowing water'
+                ]
+              },
+              {
+                sub_cat: 'garage_walls_sub',
+                question: 'What else you can you see through the hole in the wall?',
+                user_input_id:'garage_walls_inner_wall_2',
+                answers: [
+                    'electrical wires',
+                    'the next room',
+                    'home insulation',
+                    'brick',
+                    'wood',
+                    'water/flowing water'
                 ]
               },
             ],
