@@ -150,14 +150,6 @@ methods: {
     // 1. setting what triggers computed property
     this.selectedSector = fromGateOne.gate1Export.sectorFromGate1;
     console.log(fromGateOne);
-/*  */
-
-/* 
-        this.contactDataObject.contactName
-        this.contactDataObject.contactPhone
-        this.contactDataObject.contactEmail
-       this.contactDataObject.contactCity
- */
 
 /*  */
     this.currentBg = fromGateOne.gate1Export.sectorFromGate1;
@@ -196,6 +188,8 @@ methods: {
   gate4Click(){
     console.log(`FROM GATE 4 BELOW`);
     console.log(this.finalForm);
+        console.log(this.formExport);
+
     this.gate5 = true;
 
   },
@@ -270,7 +264,7 @@ computed:{
 },
 data(){
   return{
-    gate_0_switch: '',
+    gate_0_switch: 'INDOOR_SECTORS',
     gate1: true,
     gate2: false,
     gate2Single: true,
@@ -446,6 +440,7 @@ beforeMount(){
 .gate1{
   width: 40vw;
   height: 70vh;
+  padding-bottom: 15px;
   filter: contrast(1.15);
   position: relative;
   background: rgba(219, 219, 219, 0.8);
@@ -460,6 +455,7 @@ beforeMount(){
 .gate2{
   width: 40vw;
   height: 70vh;
+  padding-bottom: 15px;
   filter: contrast(1.15);
   position: relative;
   background: rgba(219, 219, 219, 0.8);
@@ -473,7 +469,7 @@ beforeMount(){
 .gate-outer-gate-2{
   box-sizing: border-box;
   border-top-width: 10px;
-  border-left-width: 4.9px;
+  border-left-width: 5px;
   border-bottom-width: 5px;
   border-right-width: 10px;
   border-style: solid;

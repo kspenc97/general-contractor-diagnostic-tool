@@ -10,6 +10,7 @@ export default new Vuex.Store({
     prevAsked: [],
     prevAskedV2: [],
     gate3Live: [],
+    currentContactInfo:{},
   },
   mutations: {
     updateForm(state, freshBatch){ 
@@ -64,6 +65,9 @@ export default new Vuex.Store({
       state.gate3Live.push(newG3);
     }
   },
+  newContactInfo(state, newContactInfo){
+    Object.assign(state.currentContactInfo, newContactInfo);
+  },
   },
   actions: {
     updateObj({commit}, data){
@@ -77,6 +81,9 @@ export default new Vuex.Store({
     },
     updateG3({commit}, datag3){
       commit('newG3', datag3);
+    },
+    updateContactInfo({commit}, newContactInfo){
+      commit('newContactInfo', newContactInfo);
     },
   },
   modules: {

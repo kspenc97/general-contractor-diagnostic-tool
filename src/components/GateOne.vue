@@ -42,6 +42,8 @@
 </template>
 
 <script>
+import {mapState, mapActions, } from 'vuex';
+
 export default {
 
 props:['inboundFromOuter'],
@@ -60,6 +62,14 @@ data(){
         formatedPhone: '',
     }
 },
+created(){
+  if(Object.keys(this.currentContactInfo).length !== 0 ){
+    this.formatNumberOnRefresh(this.currentContactInfo.contactPhone);
+    this.contactName = this.currentContactInfo.contactName;
+    this.contactEmail = this.currentContactInfo.contactEmail;
+    this.contactCity = this.currentContactInfo.contactCity;
+  }
+},
 computed: {
   generatePhoneNumber(){
     let exportPhone = this.formatedPhone;
@@ -73,10 +83,25 @@ computed: {
       contactCity: this.contactCity
     }
   },
+  ...mapState([
+    'currentContactInfo'
+  ])
 },
 methods:{
+  ...mapActions([
+      'updateContactInfo',
+    ]),
     gate1Click(){
-      console.log(this.contactInfoExport);
+      /* 1. For contact data persistance  */
+      let forGlobalState = {
+        contactName: this.contactInfoExport.contactName,
+        contactEmail: this.contactInfoExport.contactEmail, 
+        contactCity: this.contactInfoExport.contactCity,
+        contactPhone: this.originalPhone
+      }
+      /* 2. For contact data persistance  */
+      this.updateContactInfo(forGlobalState);
+      /*  */
         this.$emit('GateOneEmit', {gate1Export: {
           sectorFromGate1: this.selectedSector,
           contactInfoGate1: this.contactInfoExport,
@@ -85,6 +110,12 @@ methods:{
     },
     formatNumber(event){
     this.originalPhone = event.target.value;
+    let clensedNum = this.originalPhone.replace(/[^0-9]/g, '');
+    let clensedLayer2 = clensedNum.slice(0,3)+"-"+clensedNum.slice(3,6)+"-"+clensedNum.slice(6);  
+    this.formatedPhone = this.removeDashConditional(clensedLayer2);
+    },
+    formatNumberOnRefresh(phoneNum){
+    this.originalPhone = phoneNum;
     let clensedNum = this.originalPhone.replace(/[^0-9]/g, '');
     let clensedLayer2 = clensedNum.slice(0,3)+"-"+clensedNum.slice(3,6)+"-"+clensedNum.slice(6);  
     this.formatedPhone = this.removeDashConditional(clensedLayer2);

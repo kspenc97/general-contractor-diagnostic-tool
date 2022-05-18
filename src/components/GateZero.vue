@@ -36,6 +36,9 @@ data(){
         rightClass: "button-select-merge-gate-0-right",
         selectedArea: ''
     }
+},
+created(){
+    this.leftClass= "button-select-merge-gate-0-left-clicked";
 }
 }
 </script>

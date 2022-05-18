@@ -231,6 +231,7 @@ methods:{
 }
 /* Gate 3 */
 .select-gate-3{
+  width: 100%;
   border-style: solid;
   border-right-color: rgba(22, 22, 22, .75);
   color: rgb(22, 22, 22);

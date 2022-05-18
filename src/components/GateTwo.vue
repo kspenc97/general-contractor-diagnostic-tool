@@ -347,6 +347,7 @@ methods:{
     margin-right: 10px;
     margin-left: -10px;
     padding-bottom: 10px;
+    padding-left: 5px;
     align-content: center;
     align-items: center;
     justify-content: space-evenly;
@@ -447,7 +448,8 @@ methods:{
 
 .checkbox-title-gate-2{
   font-family: Mont;
-  margin-right: 30px;
+  margin-left: 5px;
+  margin-right: 5px;
     } 
   
   .checkboxes-container-gate-2{
