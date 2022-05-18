@@ -223,11 +223,11 @@ created(){
 
    }
   .button-select-merge-gate-0-left-clicked{
-    padding: 20px;
+    padding: 10px;
     width: 45%;
   }
   .button-select-merge-gate-0-right-clicked{
-    padding: 20px;
+    padding: 10px;
     width: 45%;
   }
 

@@ -2,7 +2,7 @@
   <div class="app">
     <div id="nav">
       <router-link class='router-link-home' to="/">Home</router-link> |
-      <router-link class='router-link-problem-selector' to="/problem-selector">Problem Selector</router-link>
+      <router-link class='router-link-problem-selector' to="/problem-selector">Diagnostic Tool</router-link>
     </div>
     <router-view/>
   </div>

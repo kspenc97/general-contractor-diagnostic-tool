@@ -80,7 +80,7 @@ methods:{
           }).then((canvas) => {
             //const img = canvas.toDataURL("image/png");
             doc.addImage(canvas, "PNG", 0, 0, doc.internal.pageSize.getWidth(), doc.internal.pageSize.getHeight());
-            doc.save("p&lstatement.pdf");
+            doc.save("customerResponse.pdf");
           });
       //LEFT OFF HERE, SAVING PDF
     },
