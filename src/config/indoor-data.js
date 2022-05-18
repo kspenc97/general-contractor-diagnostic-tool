@@ -1,5 +1,3 @@
-
-
 export const INDOOR_SECTORS = {
     //name: 'Company',
     sectors: [
@@ -9,7 +7,7 @@ export const INDOOR_SECTORS = {
         imageClass: 'bg-kitchen-1',
         subSectors: [
           {
-              name: "Stove",
+              name: "Kitchen stove",
               id: "kitchen_stove_sub",
               narrower:[
                 {
@@ -61,7 +59,7 @@ export const INDOOR_SECTORS = {
               ],
           },
           {
-            name: "Sink",
+            name: "Kitchen sink",
             id: 'kitchen_sink_sub',
             narrower:[
               {
@@ -95,8 +93,143 @@ export const INDOOR_SECTORS = {
                 ]
               },
             ],
-        },
-          
+          },
+          {
+            name: 'Kitchen Walls',
+            id: 'kitchen_walls_sub',
+            narrower:[
+              {
+                    sub_cat: 'kitchen_walls_sub',
+                    question: 'Is there a hole in the kitchen walls?',
+                    user_input_id:'kitchen_walls_sub_holes',
+                    answers: [
+                        'One',
+                        'Multiple',
+                        'Larger hole then a fist size',
+                    ]
+              },
+              {
+                sub_cat: 'kitchen_walls_sub',
+                question: 'What material are the kitchen walls constructed with?',
+                user_input_id:'kitchen_walls_sub_material-1',
+                answers: [
+                    'drywall',
+                    'wood',
+                    'vinyl',
+                    'stone',
+                    'plastic',
+                    'brick',
+                ]
+              },
+              {
+                sub_cat: 'kitchen_walls_sub',
+                question: 'What secondary material are the kitchen walls constructed with?',
+                user_input_id:'kitchen_walls_sub_material-2',
+                answers: [
+                    'drywall',
+                    'wood',
+                    'vinyl',
+                    'stone',
+                    'plastic',
+                    'brick',
+                ]
+              },
+              {
+                sub_cat: 'kitchen_walls_sub',
+                question: 'What you can you see through the hole in the kitchen wall?',
+                user_input_id:'kitchen_walls_inner_wall_1',
+                answers: [
+                    'electrical wires',
+                    'the next room',
+                    'home insulation',
+                    'brick',
+                    'wood',
+                    'water/flowing water'
+                ]
+              },
+              {
+                sub_cat: 'kitchen_walls_sub',
+                question: 'What else you can you see through the hole in the kitchen wall?',
+                user_input_id:'kitchen_walls_inner_wall_2',
+                answers: [
+                    'electrical wires',
+                    'the next room',
+                    'home insulation',
+                    'brick',
+                    'wood',
+                    'water/flowing water'
+                ]
+              },
+            ],
+          },
+          {
+            name: 'Kitchen Ceiling',
+            id: 'Kitchen_ceiling_sub',
+            narrower:[
+              {
+                    sub_cat: 'kitchen_ceiling_sub',
+                    question: 'Is there a hole in the kitchen ceiling?',
+                    user_input_id:'kitchen_ceiling_sub_holes',
+                    answers: [
+                        'One',
+                        'Multiple',
+                        'Larger hole then a fist size',
+                    ]
+              },
+              {
+                sub_cat: 'kitchen_ceiling_sub',
+                question: 'What material is the kitchen ceiling constructed with?',
+                user_input_id:'kitchen_ceiling_sub_material-1',
+                answers: [
+                    'drywall',
+                    'wood',
+                    'vinyl',
+                    'stone',
+                    'plastic',
+                    'brick',
+                ]
+              },
+              {
+                sub_cat: 'kitchen_ceiling_sub',
+                question: 'What secondary material is the kitchen ceiling constructed with?',
+                user_input_id:'kitchen_ceiling_sub_material-2',
+                answers: [
+                    'drywall',
+                    'wood',
+                    'vinyl',
+                    'stone',
+                    'plastic',
+                    'brick',
+                ]
+              },
+              {
+                sub_cat: 'kitchen_ceiling_sub',
+                question: 'What you can you see through the hole in the kitchen ceiling?',
+                user_input_id:'kitchen_ceiling_inner_wall_1',
+                answers: [
+                    'electrical wires',
+                    'the next room',
+                    'home insulation',
+                    'brick',
+                    'wood',
+                    'water/flowing water'
+                ]
+              },
+              {
+                sub_cat: 'kitchen_ceiling_sub',
+                question: 'What else you can you see through the hole in the kitchen ceiling?',
+                user_input_id:'kitchen_ceiling_inner_wall_2',
+                answers: [
+                    'electrical wires',
+                    'the next room',
+                    'home insulation',
+                    'brick',
+                    'wood',
+                    'water/flowing water'
+                ]
+              },
+            ],
+          },    
         ],/* <--- SubSectors End */
       },
       {
@@ -193,7 +326,7 @@ export const INDOOR_SECTORS = {
               ],
           },
           {
-            name: "Sink",
+            name: "Bathroom Sink",
             id: "bathroom_sink_sub",
             narrower:[
               {
@@ -227,8 +360,464 @@ export const INDOOR_SECTORS = {
                     ]
               },
             ],
-        },  
+        },
+        {
+            name: 'Bathroom Walls',
+            id: 'bathroom_walls_sub',
+            narrower:[
+              {
+                    sub_cat: 'bathroom_walls_sub',
+                    question: 'Is there a hole in the bathoom walls?',
+                    user_input_id:'bathroom_walls_sub_holes',
+                    answers: [
+                        'One',
+                        'Multiple',
+                        'Larger hole then a fist size',
+                    ]
+              },
+              {
+                sub_cat: 'bathroom_walls_sub',
+                question: 'What material are the bathroom walls constructed with?',
+                user_input_id:'bathroom_walls_sub_material-1',
+                answers: [
+                    'drywall',
+                    'wood',
+                    'vinyl',
+                    'stone',
+                    'plastic',
+                    'brick',
+                ]
+              },
+              {
+                sub_cat: 'bathroom_walls_sub',
+                question: 'What secondary material are the bathroom walls constructed with?',
+                user_input_id:'bathroom_walls_sub_material-2',
+                answers: [
+                    'drywall',
+                    'wood',
+                    'vinyl',
+                    'stone',
+                    'plastic',
+                    'brick',
+                ]
+              },
+              {
+                sub_cat: 'bathroom_walls_sub',
+                question: 'What you can you see through the hole in the bathroom wall?',
+                user_input_id:'bathroom_walls_inner_wall_1',
+                answers: [
+                    'electrical wires',
+                    'the next room',
+                    'home insulation',
+                    'brick',
+                    'wood',
+                    'water/flowing water'
+                ]
+              },
+              {
+                sub_cat: 'bathroom_walls_sub',
+                question: 'What else you can you see through the hole in the bathroom wall?',
+                user_input_id:'bathroom_walls_inner_wall_2',
+                answers: [
+                    'electrical wires',
+                    'the next room',
+                    'home insulation',
+                    'brick',
+                    'wood',
+                    'water/flowing water'
+                ]
+              },
+            ],
+          },
+          {
+            name: 'Bathroom Ceiling',
+            id: 'bathroom_ceiling_sub',
+            narrower:[
+              {
+                    sub_cat: 'bathroom_ceiling_sub',
+                    question: 'Is there a hole in the bathroom ceiling?',
+                    user_input_id:'bathroom_ceiling_sub_holes',
+                    answers: [
+                        'One',
+                        'Multiple',
+                        'Larger hole then a fist size',
+                    ]
+              },
+              {
+                sub_cat: 'bathroom_ceiling_sub',
+                question: 'What material is the bathroom ceiling constructed with?',
+                user_input_id:'bathroom_ceiling_sub_material-1',
+                answers: [
+                    'drywall',
+                    'wood',
+                    'vinyl',
+                    'stone',
+                    'plastic',
+                    'brick',
+                ]
+              },
+              {
+                sub_cat: 'bathroom_ceiling_sub',
+                question: 'What secondary material is the bathroom ceiling constructed with?',
+                user_input_id:'bathroom_ceiling_sub_material-2',
+                answers: [
+                    'drywall',
+                    'wood',
+                    'vinyl',
+                    'stone',
+                    'plastic',
+                    'brick',
+                ]
+              },
+              {
+                sub_cat: 'bathroom_ceiling_sub',
+                question: 'What you can you see through the hole in the backroom ceiling?',
+                user_input_id:'bathroom_ceiling_inner_wall_1',
+                answers: [
+                    'electrical wires',
+                    'the next room',
+                    'home insulation',
+                    'brick',
+                    'wood',
+                    'water/flowing water'
+                ]
+              },
+              {
+                sub_cat: 'bathroom_ceiling_sub',
+                question: 'What else you can you see through the hole in the bathroom ceiling?',
+                user_input_id:'bathroom_ceiling_inner_wall_2',
+                answers: [
+                    'electrical wires',
+                    'the next room',
+                    'home insulation',
+                    'brick',
+                    'wood',
+                    'water/flowing water'
+                ]
+              },
+            ],
+          },
+            
         ],/* <--- SubSectors End */
       },
+      {
+        name: 'HVAC',
+        id: 'hvac_sector',
+        imageClass: 'bg-hvac-1',
+        subSectors: [
+          {
+              name: "HVAC system and control panel",
+              id: 'hvac_system_and_control_sub',
+              narrower:[
+                {
+                    sub_cat: 'hvac_system_and_control_sub',
+                    question: 'Tell me about the functionality of the control device for the HVAC system',
+                    user_input_id:'hvac_system_control_1',
+                    answers: [
+                        'device is turning on normally but the buttons don\'t seem to affect anything',
+                        'device is not powering on',
+                        'device is powering on and off repeatedly',
+                        'device is turning on but displaying no data',
+                    ]
+                },
+                {
+                    sub_cat: 'hvac_system_and_control_sub',
+                    question: 'Can you turn the heat & air conditioning off or on?',
+                    user_input_id:'hvac_system_control_2',
+                    answers: [
+                        'Can\'t turn off heat',
+                        'Can\'t turn off ac',
+                        'Can\'t turn off heat and ac',
+                        'Can\'t turn on heat',
+                        'Can\'t turn on ac',
+                        'Can\'t turn on heat and ac',
+                    ]
+                },
+                {
+                    sub_cat: 'hvac_system_and_control_sub',
+                    question: 'Describe any noise the HVAC system is making',
+                    user_input_id:'hvac_system_control_3',
+                    answers: [
+                        'grinding noises',
+                        'banging noises',
+                        'scraping noises',
+                        'screaching noises',
+                        'no noises'
+                    ]
+                },
+                {
+                    sub_cat: 'hvac_system_and_control_sub',
+                    question: 'Type in any brand name & model on the HVAC control device',
+                    user_input_id:'hvac_system_control_4',
+                    answers: [
+                        'INPUT'
+                    ]
+                },
+                {
+                    sub_cat: 'hvac_system_and_control_sub',
+                    question: 'Type in any brand name & model on the HVAC system',
+                    user_input_id:'hvac_system_control_5',
+                    answers: [
+                        'INPUT'
+                    ]
+                },
+              ],
+        },
+        {
+            name: "HVAC Ventiation",
+            id: 'hvac_ventilation_sub',
+            narrower:[
+              {
+                  sub_cat: 'hvac_ventilation_sub',
+                  question: 'Desribe the temperature of the home',
+                  user_input_id:'home_temperature_1',
+                  answers: [
+                      'too hot',
+                      'too cold',
+                      'inconsistent',
+                    ]
+              },
+              {
+                  sub_cat: 'hvac_ventilation_sub',
+                  question: 'Is there airflow coming out of the vents?',
+                  user_input_id:'home_temperature_2',
+                  answers: [
+                      'from all vents',
+                      'from some vents',
+                      'no airflow',
+                      'excess airflow',
+                  ]
+                },
+              ],
+          },
+        ],
+         
+      },/* <--- SubSectors End */
+      /*  */
+      {
+        name: 'General',
+        id: 'general_sector',
+        imageClass: 'bg-general-1',
+        subSectors: [
+          {
+              name: "Plumbing issues",
+              id: 'plumbing_general_sub',
+              narrower:[
+                {
+                    sub_cat: 'plumbing_general_sub',
+                    question: 'Where is the leak located?',
+                    user_input_id:'plumbing_general_1',
+                    answers: [
+                        'the wall',
+                        'the floor',
+                        'the ceiling',
+                    ]
+                },
+                {
+                    sub_cat: 'plumbing_general_sub',
+                    question: 'Describe the flow of the liquid from the leak?',
+                    user_input_id:'plumbing_general_2',
+                    answers: [
+                        'dripping inconsistently',
+                        'dripping fast',
+                        'flowing slow',
+                        'flowing fast'
+                    ]
+                },
+                {
+                    sub_cat: 'plumbing_general_sub',
+                    question: 'What type of liquid is leaking?',
+                    user_input_id:'plumbing_general_3',
+                    answers: [
+                        'Water',
+                        'Sewage',
+                        'other',
+                    ]
+                },
+              ],
+        },
+        {
+            name: "Electrical issues",
+            id: 'electrical_general_sub',
+            narrower:[
+              {
+                  sub_cat: 'electrical_general_sub',
+                  question: 'Is there an issue with outlets?',
+                  user_input_id:'electrical_general_1',
+                  answers: [
+                      'Single outlet not working',
+                      'Multiple outlets not working',
+                  ]
+              },
+              {
+                sub_cat: 'electrical_general_sub',
+                question: 'Is there an issue with switches?',
+                user_input_id:'electrical_general_2',
+                answers: [
+                    'Single Switch not working',
+                    'Multiple switches not working',
+                    'Single switch affecting incorrect spot',
+                    'Multiple switches affecting incorrect spots'
+                ]
+              },
+              {
+                sub_cat: 'electrical_general_sub',
+                question: 'Have you checked the circut breaker box?',
+                user_input_id:'electrical_general_3',
+                answers: [
+                    'Yes',
+                    'No'
+                ]
+              },
+              {
+                sub_cat: 'electrical_general_sub',
+                question: 'Have you seen any sparks?',
+                user_input_id:'electrical_general_4',
+                answers: [
+                    'Yes',
+                    'No'
+                ]
+              },
+            ],
+         },
+        {
+            name: 'Wall damage',
+            id: 'wall_general_damage_sub',
+            narrower:[
+              {
+                    sub_cat: 'wall_general_damage_sub',
+                    question: 'Is there a hole in the wall?',
+                    user_input_id:'walls_general_1',
+                    answers: [
+                        'One',
+                        'Multiple',
+                        'Larger hole then a fist size',
+                    ]
+              },
+              {
+                sub_cat: 'wall_general_damage_sub',
+                question: 'What material are the walls constructed with?',
+                user_input_id:'walls_general_2',
+                answers: [
+                    'drywall',
+                    'wood',
+                    'vinyl',
+                    'stone',
+                    'plastic',
+                    'brick',
+                ]
+              },
+              {
+                sub_cat: 'wall_general_damage_sub',
+                question: 'What secondary material are the walls constructed with?',
+                user_input_id:'walls_general_3',
+                answers: [
+                    'drywall',
+                    'wood',
+                    'vinyl',
+                    'stone',
+                    'plastic',
+                    'brick',
+                ]
+              },
+              {
+                sub_cat: 'wall_general_damage_sub',
+                question: 'What you can you see through the hole in the wall?',
+                user_input_id:'walls_general_4',
+                answers: [
+                    'electrical wires',
+                    'the next room',
+                    'home insulation',
+                    'brick',
+                    'wood',
+                    'water/flowing water'
+                ]
+              },
+              {
+                sub_cat: 'wall_general_damage_sub',
+                question: 'What else you can you see through the hole in the wall?',
+                user_input_id:'walls_general_5',
+                answers: [
+                    'electrical wires',
+                    'the next room',
+                    'home insulation',
+                    'brick',
+                    'wood',
+                    'water/flowing water'
+                ]
+              },
+            ],
+          },
+          {
+            name: 'Ceiling damage',
+            id: 'ceiling_general_damage_sub',
+            narrower:[
+              {
+                    sub_cat: 'ceiling_general_damage_sub',
+                    question: 'Is there a hole in the ceiling?',
+                    user_input_id:'ceiling_general_1',
+                    answers: [
+                        'One',
+                        'Multiple',
+                        'Larger hole then a fist size',
+                    ]
+              },
+              {
+                sub_cat: 'ceiling_general_damage_sub',
+                question: 'What material is the ceiling constructed with?',
+                user_input_id:'ceiling_general_2',
+                answers: [
+                    'drywall',
+                    'wood',
+                    'vinyl',
+                    'stone',
+                    'plastic',
+                    'brick',
+                ]
+              },
+              {
+                sub_cat: 'ceiling_general_damage_sub',
+                question: 'What secondary material is the ceiling constructed with?',
+                user_input_id:'ceiling_general_3',
+                answers: [
+                    'drywall',
+                    'wood',
+                    'vinyl',
+                    'stone',
+                    'plastic',
+                    'brick',
+                ]
+              },
+              {
+                sub_cat: 'ceiling_general_damage_sub',
+                question: 'What you can you see through the hole in the ceiling?',
+                user_input_id:'ceiling_general_4',
+                answers: [
+                    'electrical wires',
+                    'the next room',
+                    'home insulation',
+                    'brick',
+                    'wood',
+                    'water/flowing water'
+                ]
+              },
+              {
+                sub_cat: 'ceiling_general_damage_sub',
+                question: 'What else you can you see through the hole in the ceiling?',
+                user_input_id:'ceiling_general_5',
+                answers: [
+                    'electrical wires',
+                    'the next room',
+                    'home insulation',
+                    'brick',
+                    'wood',
+                    'water/flowing water'
+                ]
+              },
+            ],
+          },
+            
+        ],/* <--- SubSectors End */
+      },   
     ],/* <--- Sectors End */
   };

@@ -128,139 +128,358 @@ export const OUTDOOR_SECTORS = {
               },
             ],
           },
+          {
+            name: 'Garage Ceiling',
+            id: 'garage_ceiling_sub',
+            narrower:[
+              {
+                    sub_cat: 'garage_ceiling_sub',
+                    question: 'Is there a hole in the garage ceiling?',
+                    user_input_id:'garage_ceiling_sub_holes',
+                    answers: [
+                        'One',
+                        'Multiple',
+                        'Larger hole then a fist size',
+                    ]
+              },
+              {
+                sub_cat: 'garage_ceiling_sub',
+                question: 'What material is the garage ceiling constructed with?',
+                user_input_id:'garage_ceiling_sub_material-1',
+                answers: [
+                    'drywall',
+                    'wood',
+                    'vinyl',
+                    'stone',
+                    'plastic',
+                    'brick',
+                ]
+              },
+              {
+                sub_cat: 'garage_ceiling_sub',
+                question: 'What secondary material is the garage ceiling constructed with?',
+                user_input_id:'garage_ceiling_sub_material-2',
+                answers: [
+                    'drywall',
+                    'wood',
+                    'vinyl',
+                    'stone',
+                    'plastic',
+                    'brick',
+                ]
+              },
+              {
+                sub_cat: 'garage_ceiling_sub',
+                question: 'What you can you see through the hole in the garage ceiling?',
+                user_input_id:'garage_ceiling_inner_wall_1',
+                answers: [
+                    'electrical wires',
+                    'the next room',
+                    'home insulation',
+                    'brick',
+                    'wood',
+                    'water/flowing water'
+                ]
+              },
+              {
+                sub_cat: 'garage_ceiling_sub',
+                question: 'What else you can you see through the hole in the garage ceiling?',
+                user_input_id:'garage_ceiling_inner_wall_2',
+                answers: [
+                    'electrical wires',
+                    'the next room',
+                    'home insulation',
+                    'brick',
+                    'wood',
+                    'water/flowing water'
+                ]
+              },
+            ],
+          },
         ],/* <--- SubSectors End */
       },
       {
         name: 'Deck',
-        id: 'bathroom_sector',
-        imageClass: 'bg-bathroom-1',
+        id: 'deck_sector',
+        imageClass: 'bg-deck-1',
         subSectors: [
           {
-              name: "Shower Walls & Interior",
-              id: 'shower_walls_and_interior_sub',
+              name: "Deck Construction",
+              id: 'deck_construction_sub',
               narrower:[
                 {
-                    sub_cat: 'shower_walls_and_interior_sub',
-                    question: 'What is the primary type of material is the shower is constructed with?',
-                    user_input_id:'bathroom_shower_material_1',
+                    sub_cat: 'deck_construction_sub',
+                    question: 'What is the primary material is the deck constructed with?',
+                    user_input_id:'deck_construction_material_1',
                     answers: [
-                        'marble',
-                        'plastic',
-                        'stone',
                         'wood',
-                        'tile',
+                        'plastic',
+                        'metal',
                     ]
                 },
                 {
-                    sub_cat: 'shower_walls_and_interior_sub',
-                    question: 'What is the Secondary type of material is the shower is constructed with?',
-                    user_input_id:'bathroom_shower_material_2',
+                    sub_cat: 'deck_construction_sub',
+                    question: 'What is the secondary material is the deck constructed with?',
+                    user_input_id:'deck_construction_material_2',
                     answers: [
-                        'marble',
-                        'plastic',
-                        'stone',
                         'wood',
-                        'tile',
+                        'plastic',
+                        'metal',
                     ]
                 },
                 {
-                    sub_cat: 'shower_walls_and_interior_sub',
-                    question: 'Describe any significant damage to the shower',
-                    user_input_id:'bathroom_shower_damage',
+                    sub_cat: 'deck_construction_sub',
+                    question: 'Describe any visible damage to the deck',
+                    user_input_id:'deck_construction_damage_1',
                     answers: [
-                        'single crack',
-                        'multiple cracks',
-                        'shattering',
-                        'broken piece',
-                        'many broken pieces',
+                        'cracked materials',
+                        'material has fallen off the deck',
+                        'handrails are loose',
+                        'handrails have fallen off',
+                        'stairs are loose',
+                        'beams are broken in various places'
+                    ]
+                },
+                {
+                    sub_cat: 'deck_construction_sub',
+                    question: 'Describe any other visible damage to the deck',
+                    user_input_id:'deck_construction_damage_2',
+                    answers: [
+                        'cracked materials',
+                        'material has fallen off the deck',
+                        'handrails are loose',
+                        'handrails have fallen off',
+                        'stairs are loose',
+                        'beams are broken in various places'
                     ]
                 },
               ],
         },
         {
-              name: "Shower Head & Knobs",
-              id: "shower_head_and_knobs_sub",
+            name: "Deck Wall attachment",
+            id: 'deck_wall_sub',
+            narrower:[
+              {
+                  sub_cat: 'deck_wall_sub',
+                  question: 'How is the deck attached to the wall?',
+                  user_input_id:'deck_wall_attachment_1',
+                  answers: [
+                      'wood is hammered into wall',
+                      'metal connectors wrapped around wood',
+                      'beams are slid into wall cutouts',
+                  ]
+              },
+              {
+                sub_cat: 'deck_wall_sub',
+                question: 'Is there any visible damage near the attachments',
+                user_input_id:'deck_wall_damage_1',
+                answers: [
+                    'beams are falling out of attachments on the wall',
+                    'a section of the deck along the wall is buckeling',
+                    'the wall is rotting/damaged where the deck is connected to it',
+                ]
+              },
+              {
+                sub_cat: 'deck_wall_sub',
+                question: 'Is there any other damage near the attachments',
+                user_input_id:'deck_wall_damage_2',
+                answers: [
+                    'beams are falling out of attachments on the wall',
+                    'a section of the deck along the wall is buckeling',
+                    'the wall is rotting/damaged where the deck is connected to it',
+                ]
+              },
+            ],
+      },
+        ],/* <--- SubSectors End */
+      },
+      {
+        name: 'Fence',
+        id: 'fence_sector',
+        imageClass: 'bg-fence-1',
+        subSectors: [
+          {
+              name: "Fence Construction",
+              id: 'fence_construction_sub',
               narrower:[
                 {
-                    sub_cat: "shower_head_and_knobs_sub",
-                    question: 'Is the Shower turning on?',
-                    user_input_id:'is_bathroom_shower_on',
+                    sub_cat: 'fence_construction_sub',
+                    question: 'What is the primary material is the fence constructed with?',
+                    user_input_id:'fence_construction_material_1',
                     answers: [
-                        'Yes it is turning on',
-                        'No it isn\'t turning on',
-                        'It is sometimes turning on'
+                        'wood',
+                        'plastic',
+                        'metal',
+                        'brick',
                     ]
                 },
                 {
-                    sub_cat: "shower_head_and_knobs_sub",
-                    question: 'Tell me about the temperature?',
-                    user_input_id:'bathroom_shower_temperature',
+                    sub_cat: 'fence_construction_sub',
+                    question: 'What is the secondary material is the fence constructed with?',
+                    user_input_id:'fence_construction_material_2',
                     answers: [
-                        'To Hot',
-                        'To Cold',
-                        'To Hot Sometimes',
-                        'To Cold Sometimes'
+                        'wood',
+                        'plastic',
+                        'metal',
+                        'brick',
                     ]
                 },
                 {
-                    sub_cat: "shower_head_and_knobs_sub",
-                    question: 'Tell me about the water pressure?',
-                    user_input_id:'bathroom_shower_water_pressure',
+                    sub_cat: 'fence_construction_sub',
+                    question: 'Describe any visible damage to the fence',
+                    user_input_id:'fence_construction_damage_1',
                     answers: [
-                        'Water flow to fast',
-                        'Water flow to slow',
-                        'Water flow inconsistent',
-                        'Water flowing from incorrect area'
+                        'fence beams are not attached to the ground properly',
+                        'pieces have fallen off the fence',
+                        'a section of the fence has fallen over',
+                        'something else is interfering with the fence e.x. tree branch fell on fence',
+                        'light fixtures on the fence are broken',
                     ]
                 },
                 {
-                    sub_cat: "shower_head_and_knobs_sub",
-                    question: 'What Brand is the shower head?',
-                    user_input_id:'bathroom_shower_head_brand',
+                    sub_cat: 'fence_construction_sub',
+                    question: 'Describe any other visible damage to the fence',
+                    user_input_id:'fence_construction_damage_2',
                     answers: [
-                       'INPUT'
+                        'fence beams are not attached to the ground properly',
+                        'pieces have fallen off the fence',
+                        'a section of the fence has fallen over',
+                        'something else is interfering with the fence e.x. tree branch fell on fence',
+                        'light fixtures on the fence are broken',
                     ]
                 },
               ],
-          },
-          {
-            name: "Sink",
-            id: "bathroom_sink_sub",
+        },
+        {
+            name: "Fence Gate",
+            id: 'fence_gate_sub',
             narrower:[
               {
-                    sub_cat: "bathroom_sink_sub",
-                    question: 'Is the Water flowing?',
-                    user_input_id:'bathroom_sink_water_flowing',
-                    answers: [
-                        'Yes',
-                        'No',
-                        'Sometimes'
-                    ]
+                  sub_cat: 'fence_gate_sub',
+                  question: 'Is the gate opening?',
+                  user_input_id:'fence_gate_action',
+                  answers: [
+                      'opening halfway then sticking',
+                      'gate stuck closed',
+                      'cannot open lock on gate',
+                  ]
               },
               {
-                    sub_cat: "bathroom_sink_sub",
-                    question: 'How is the water flowing?',
-                    user_input_id:'bathroom_sink_water_pressure',
-                    answers: [
-                        'Too Fast',
-                        'Too Slow',
-                        'Erratic'
-                    ]
+                sub_cat: 'fence_gate_sub',
+                question: 'Is the gate automatic?',
+                user_input_id:'fence_gate_power',
+                answers: [
+                    'Yes, the gate is powered by electricity',
+                    'Yes, the gate opens using a crank',
+                    'No, the gate is opened manually',
+                ]
               },
               {
-                    sub_cat: "bathroom_sink_sub",
-                    question: 'Is the water flowing out of the proper spot?',
-                    user_input_id:'bathroom_sink_water_flow_location',
-                    answers: [
-                        'Partially the correct location',
-                        'Completely incorrect location',
-                        'Erratic'
-                    ]
-              },
+                sub_cat: 'fence_gate_sub',
+                question: 'What is the primary material the gate is constructed with?',
+                user_input_id:'fence_gate_construction_material_1',
+                answers: [
+                    'wood',
+                    'plastic',
+                    'metal',
+                    'brick',
+                ]
+            },
+            {
+                sub_cat: 'fence_gate_sub',
+                question: 'What is the secondary material the gate constructed with?',
+                user_input_id:'fence_gate_construction_material_2',
+                answers: [
+                    'wood',
+                    'plastic',
+                    'metal',
+                    'brick',
+                ]
+            },
+            {
+                sub_cat: 'fence_gate_sub',
+                question: 'Describe any visible damage to the gate',
+                user_input_id:'fence_gate_construction_damage_1',
+                answers: [
+                    'gate is not attached properly on the sides',
+                    'pieces have fallen off the gate',
+                    'the gate has fallen off it\'s mounting',
+                    'something else is interfering with the gate e.x. tree branch fell on gate',
+                    'light fixtures on the gate are broken',
+                ]
+            },
+            {
+                sub_cat: 'fence_gate_sub',
+                question: 'Describe any other visible damage to the gate',
+                user_input_id:'fence_gate_construction_damage_2',
+                answers: [
+                    'gate is not attached properly on the sides',
+                    'pieces have fallen off the gate',
+                    'the gate has fallen off it\'s mounting',
+                    'something else is interfering with the gate e.x. tree branch fell on gate',
+                    'light fixtures on the gate are broken',
+                ]
+            },
             ],
-        },  
+      },
         ],/* <--- SubSectors End */
       },
-    
+      {
+        name: 'Driveway',
+        id: 'driveway_sector',
+        imageClass: 'bg-driveway-1',
+        subSectors: [
+          {
+              name: "Driveway Construction",
+              id: 'driveway_construction_sub',
+              narrower:[
+                {
+                    sub_cat: 'driveway_construction_sub',
+                    question: 'What is the primary material the driveway is constructed with?',
+                    user_input_id:'driveway_construction_material_1',
+                    answers: [
+                        'brick',
+                        'concrete',
+                        'stone',
+                        'turf',
+                    ]
+                },
+                {
+                    sub_cat: 'driveway_construction_sub',
+                    question: 'What is the secondary material the driveway is constructed with?',
+                    user_input_id:'driveway_construction_material_2',
+                    answers: [
+                        'brick',
+                        'concrete',
+                        'stone',
+                        'turf',
+                    ]
+                },
+                {
+                    sub_cat: 'driveway_construction_sub',
+                    question: 'Describe any damage to the driveway',
+                    user_input_id:'driveway_damage_1',
+                    answers: [
+                        'single crack',
+                        'multiple cracks',
+                        'pieces missing',
+                        'water coming from below driveway',
+                    ]
+                },
+                {
+                    sub_cat: 'driveway_construction_sub',
+                    question: 'Describe any other damage to the driveway',
+                    user_input_id:'driveway_damage_2',
+                    answers: [
+                        'single crack',
+                        'multiple cracks',
+                        'pieces missing',
+                        'water coming from below driveway',
+                    ]
+                },
+              ],
+        },
+        ],/* <--- SubSectors End */
+      },
     ],/* <--- Sectors End */
   };
